@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-size: 100% 100%;
+}
+body {
+  -webkit-backface-visibility: hidden;
+}
+.pages,
+.page,
+.wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.page {
+  display: none;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.active,
+.showing {
+  display: block!important;
+}
+.page.active {
+  z-index: 10;
+}
+.page.page-ontop {
+  z-index: 99;
+}
+.inner-img>img {
+  width: 100%;
+}
+.pages>.page:nth-child(1) {
+  background-image: url(../img/bg1.jpg);
+}
+.pages>.page:nth-child(2) {
+  background-image: url(../img/bg2.jpg);
+}
+#detail-mask {
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 100;
+  opacity: 0;
+  display: none;
+}
+#zhufu-btn {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  margin-left: -25%;
+  width: 50%;
+  -webkit-transform: scale(0);
+}
+.all-photos {
+  position: absolute;
+  top: 22.5%;
+  left: 23%;
+  width: 54%;
+}
+.all-photos>.photo {
+  position: absolute;
+  -webkit-transition-property: -webkit-transform, opacity;
+  -webkit-transition-duration: 400ms;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); /*cubic-bezier(0.77, 0, 0.175, 1) */
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));
+  opacity: 1;
+}
+.photo.scaling {
+  -webkit-transition-duration: 600ms!important;
+}
+.photo>img {
+  width: 100%;
+}
+.photo.current {
+  z-index: 101;
+}
+.photo.l1,
+.photo.r1 {
+  z-index: 3;
+}
+.photo.l1>img,
+.photo.r1>img {
+  opacity: 0.9;
+}
+.photo.l2,
+.photo.r2 {
+  z-index: 2;
+}
+.photo.l2>img,
+.photo.r2>img {
+  opacity: 0.8;
+}
+.photo.l3,
+.photo.r3 {
+  z-index: 1;
+  opacity: 0;
+}
+.photo.l3>img,
+.photo.r3>img {
+  opacity: 0.7;
+}
+.photo.l1 {
+  -webkit-transform: scale(0.85) translate(-40%, 5%);
+}
+.photo.r1 {
+  -webkit-transform: scale(0.85) translate(40%, 5%);
+}
+.photo.l2 {
+  -webkit-transform: scale(0.7) translate(-90%, 12%);
+}
+.photo.r2 {
+  -webkit-transform: scale(0.7) translate(90%, 12%);
+}
+.photo.l3 {
+  -webkit-transform: scale(0.55) translate(-140%, 19%);
+}
+.photo.r3 {
+  -webkit-transform: scale(0.55) translate(140%, 19%);
+}
+.photo.l3_ {
+  -webkit-transform: scale(0.55) translate(-140%, 19%);
+  display: none;
+}
+.photo.r3_ {
+  -webkit-transform: scale(0.55) translate(140%, 19%);
+  display: none;
+  opacity: 0;
+}
